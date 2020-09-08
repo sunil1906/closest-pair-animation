@@ -96,15 +96,8 @@ def distance(a, b):
     return ( (b[1] - a[1])**2 + (b[0] - a[0])**2 )**(1/2)
 
 def bruteForce(points, n, mid):
-    obj1=pygame.font.Font('freesansbold.ttf',20)
-    s = 'n = ' + str(n)
-    surf=obj1.render(s,True,black)
-    GAMEWINDOW.blit(surf,(810, 10))
-    s = 'So, Bruteforce'
-    surf=obj1.render(s,True,black)
-    GAMEWINDOW.blit(surf,(810, 50))
     mini = sys.maxsize
-    sleep()
+
     for i in range(n-1):
         for j in range(i+1, n):
             call_pygame(points[i], points[j], mid,-1,-1)
@@ -114,11 +107,6 @@ def bruteForce(points, n, mid):
     return mini            
     
 def stripClosest(points, n, prevMin, left, right):
-    obj1=pygame.font.Font('freesansbold.ttf',20)
-    s = 'Strip Closest'
-    surf=obj1.render(s,True,black)
-    GAMEWINDOW.blit(surf,(810, 10))
-    sleep()
     
     mini = prevMin
     for i in range(n-1):
